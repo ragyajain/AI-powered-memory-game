@@ -1,0 +1,30 @@
+CXX = g++
+CXXFLAGS = -std=c++11 -Wall -Wextra
+TARGET = memory_game
+OBJS = Card.o DifficultyTree.o AIPlayer.o GameBoard.o main.o
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+
+Card.o: Card.cpp Card.h
+	$(CXX) $(CXXFLAGS) -c Card.cpp
+
+DifficultyTree.o: DifficultyTree.cpp DifficultyTree.h
+	$(CXX) $(CXXFLAGS) -c DifficultyTree.cpp
+
+AIPlayer.o: AIPlayer.cpp AIPlayer.h Card.h
+	$(CXX) $(CXXFLAGS) -c AIPlayer.cpp
+
+GameBoard.o: GameBoard.cpp GameBoard.h Card.h Stack.h AIPlayer.h
+	$(CXX) $(CXXFLAGS) -c GameBoard.cpp
+
+main.o: main.cpp GameBoard.h DifficultyTree.h
+	$(CXX) $(CXXFLAGS) -c main.cpp
+
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+run: $(TARGET)
+	./$(TARGET)
