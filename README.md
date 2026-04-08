@@ -67,16 +67,16 @@ Just open `index.html` in browser
 ## Screenshots
 
 ### Home Screen
-![Home](assets/home.png)
+![Home](assests/home.png)
 
 ### Game Screen
-![Game](assets/game.png)
+![Game](assests/game.png)
 
 ### Difficulty Selection
-![Difficulty](assets/difficultyLevel.png)
+![Difficulty](assests/difficultyLevel.png)
 
 ### Result Screen
-![Result](assets/result.png)
+![Result](assests/result.png)
 
 ---
 
